@@ -391,7 +391,7 @@ angular.module('app.membership.directives', []).directive('imgAreaSelect', [
       function ProjectBlank(list) {
         this._list = list;
         this.name = "";
-        this.src = "/add.png";
+        this.src = "http://gulinss.github.io/LayoutPlayer-Web/add.png";
         this.files = [];
         angular.extend(this, new ProjectEditedMixin());
       }
@@ -407,7 +407,7 @@ angular.module('app.membership.directives', []).directive('imgAreaSelect', [
         deferred = $q.defer();
         deferred.resolve({
           id: 1,
-          src: "/demo300x200.jpg"
+          src: "http://gulinss.github.io/LayoutPlayer-Web/demo300x200.jpg"
         });
         return deferred.promise.then(function(dto) {
           angular.extend(dto, {
