@@ -41,7 +41,7 @@ angular.module('app.membership.controllers', []).controller('projectList', [
   '$scope', '$routeParams', function($scope, $routeParams) {
     $scope.projectId = parseInt($routeParams.projectId);
     $scope.screenId = parseInt($routeParams.screenId);
-    $scope.img = "/demo.jpg";
+    $scope.img = "http://gulinss.github.io/LayoutPlayer-Web/demo.jpg";
     return $scope.links = [
       {
         point: {
