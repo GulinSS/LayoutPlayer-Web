@@ -555,7 +555,7 @@ angular.module('app.membership.services.viewModels.screenList', []).factory('Scr
         this._list = list;
         this.projectId = projectId;
         this.name = "";
-        this.src = "/add.png";
+        this.src = "http://gulinss.github.io/LayoutPlayer-Web/add.png";
         this.file = null;
         this.first = false;
       }
@@ -575,7 +575,7 @@ angular.module('app.membership.services.viewModels.screenList', []).factory('Scr
         deferred = $q.defer();
         deferred.resolve({
           id: 1,
-          src: "/demo300x200.jpg"
+          src: "http://gulinss.github.io/LayoutPlayer-Web/demo300x200.jpg"
         });
         return deferred.promise.then(function(dto) {
           angular.extend(dto, {
