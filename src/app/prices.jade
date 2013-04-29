@@ -1,0 +1,38 @@
+extend templates-static/_master
+
+block navigation
+  mixin navigation("/prices.html")
+
+append content
+  .well
+    h1 Варианты сотрудничества
+  .span10.offset1
+    .row
+      table.table
+        thead
+          tr
+            th.lead  
+            th.lead(style='width: 20%;') Бесплатный
+            th.lead(style='width: 20%;') Расширенный
+        tbody
+          tr
+            td
+              p.lead Ограничение на объем проекта
+              p
+                | Параметр влияет на максимальное количество эскизов в одном проекте.
+            td.lead до 3
+            td.lead неограничено
+          tr
+            td
+              p.lead Возможность пригласить пользователя на демо без регистрации
+              p
+                | Дополнительная регистрация может напрягать ваших пользователей, генерация короткой ссылки поможет вам быстрее делать свою работу.
+            td.lead нет
+            td.lead да
+          tr
+            td  
+            td
+              a.btn.btn-info.btn-large(href='assign.html') Начнем отсюда
+            td
+              a.btn.btn-info.btn-large(href='assign.html') 500р/мес
+

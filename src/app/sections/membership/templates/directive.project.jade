@@ -1,0 +1,47 @@
+div("ng-switch"="isEditable()")
+  div("ng-switch-when"="view")
+    .img-link
+      a(href='{{ "#/"+project.getId() }}')
+        img(src='{{ project.src }}')
+      .btn-group.on-img-control.top-control
+        button.btn.btn-mini("ng-click"="project.toEdit()")
+          i.icon-pencil
+        button.btn.btn-danger.btn-mini("ng-click"="project.delete()")
+          i.icon-remove
+    .caption
+      h3 {{ project.name }}
+  div("ng-switch-when"="edit")
+
+    form("ng-submit"="project.save()")
+      .img-link
+        a(href='#')
+          // На рисунке написать о добавлении изображения сюда
+          img(src='{{ project.src }}')
+        .btn-group.on-img-control.top-control
+          button.btn.btn-primary.btn-mini("ng-click"="project.save()")
+            i.icon-ok
+          button.btn.btn-mini("ng-click"="project.cancel()")
+            i.icon-ban-circle
+        .on-img-control.bottom-control
+          // потом становится плавно зеленым
+          // span.badge.badge-warning +3
+      .caption(style="text-align:center;")
+        h3
+          input(type='header', placeholder="Заголовок?", "ng-model"="project.name")
+  div("ng-switch-when"="create")
+    form("ng-submit"="project.save()")
+      .img-link
+        a
+          // На рисунке написать о добавлении изображения сюда
+          img(src='{{ project.src }}')
+        .btn-group.on-img-control.top-control
+          button.btn.btn-primary.btn-mini("ng-click"="project.save()")
+            i.icon-ok
+          button.btn.btn-mini("ng-click"="project.delete()")
+            i.icon-remove
+        .on-img-control.bottom-control
+          // потом становится плавно зеленым
+          // span.badge.badge-warning +3
+      .caption(style="text-align:center;")
+        h3
+          input(type='header', placeholder="Заголовок?", "ng-model"="project.name")

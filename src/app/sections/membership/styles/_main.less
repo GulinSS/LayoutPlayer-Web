@@ -1,0 +1,21 @@
+html {
+  overflow-y: scroll;
+}
+
+img {
+  // TODO: не работает почему-то!
+  user-drag: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+}
+
+@import "_mixins.less";
+@import "_bootstrap-overrides.less";
+@import "_thumbnail-controls.less";
+@import "_screen.less";
+@import "_dnd.less";
+
+// Чтобы не дергалось при изменении вида на редактирование и обратно
+.thumbnail .img-link img {
+  min-height: 200px;
+}

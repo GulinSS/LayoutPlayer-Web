@@ -1,0 +1,7 @@
+#mainControls.row-fluid("project-list-controls")
+  button.btn.btn-large.btn-primary(ng-click='addProject()')
+    | <i class='icon-plus'></i>
+    | Добавить проект
+.row-fluid
+  .thumbnails("images-dnd-on-list")
+    .thumbnail("ng-repeat"='project in projects', "images-dnd-on-list", "data-project"="project")

@@ -1,0 +1,29 @@
+.img-link {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+.on-img-control {
+  @corner-padding: 5px;
+  position: absolute;
+
+  .opacity(70);
+  .border-radius(5px);
+  .box-shadow(0 1px 4px rgba(0,0,0,.3));
+
+  &.top-control {
+    right: @corner-padding;
+    top: @corner-padding;
+  }
+
+  &.bottom-control {
+    right: @corner-padding;
+    bottom: @corner-padding;
+    .box-shadow(none);
+  }
+}
+
+#mainControls {
+  margin: 1em 0;
+}

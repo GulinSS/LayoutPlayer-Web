@@ -1,0 +1,28 @@
+.thumbnail, .caption h3 {
+  text-align: center;
+}
+
+.thumbnail:hover {
+  border-color: @linkColor;
+  .box-shadow(0 1px 4px rgba(0,105,214,.25));
+}
+
+.caption {
+  text-align: justify;
+}
+
+.thumbnails {
+  font-size: 0;
+
+  .thumbnail {
+    vertical-align: top;
+    display: inline-block;
+    margin: 10px;
+    width: 350px;
+    font-size: 14px;
+
+    form {
+      margin: 0;
+    }
+  }
+}

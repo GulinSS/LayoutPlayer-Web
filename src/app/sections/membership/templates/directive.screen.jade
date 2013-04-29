@@ -1,0 +1,49 @@
+div("ng-switch"="isEditable()")
+  div("ng-switch-when"="view")
+    .img-link
+      a(href='{{ "#/"+screen.getProjectId()+"/"+screen.getId() }}')
+        img(src='{{ screen.src }}')
+      .btn-group.on-img-control.top-control
+        button.btn.btn-mini("ng-click"="screen.toEdit()")
+          i.icon-pencil
+        button.btn.btn-danger.btn-mini("ng-click"="screen.delete()")
+          i.icon-remove
+      div("ng-switch"="screen.first")
+        div("ng-switch-when"="true")
+          .bottom-control.on-img-control
+            span.badge.badge-warning
+              i.icon-star
+    .caption
+      p {{ screen.name }}
+
+  div("ng-switch-when"="edit")
+    form("ng-submit"="screen.save()")
+      .img-link
+        a(href='#')
+          // На рисунке написать о добавлении изображения сюда
+          img(src='{{ screen.src }}')
+        .btn-group.on-img-control.top-control
+          button.btn.btn-warning.btn-mini(ng-disabled="screen.first", ng-click="screen.promote()")
+            i.icon-star
+          button.btn.btn-primary.btn-mini(ng-click="screen.save()")
+            i.icon-ok
+          button.btn.btn-mini(ng-click="screen.cancel()")
+            i.icon-ban-circle
+      .caption(style="text-align:center;")
+        textarea(style="width: 95%;", placeholder="Lorem ipsum lalala...", ng-model="screen.name")
+
+  div("ng-switch-when"="create")
+    form("ng-submit"="screen.save()")
+      .img-link
+        a
+          // На рисунке написать о добавлении изображения сюда
+          img(src='{{ screen.src }}')
+        .btn-group.on-img-control.top-control
+          button.btn.btn-warning.btn-mini(ng-disabled="screen.first", ng-click="screen.promote()")
+            i.icon-star
+          button.btn.btn-primary.btn-mini(ng-click="screen.save()")
+            i.icon-ok
+          button.btn.btn-mini(ng-click="screen.delete()")
+            i.icon-remove
+      .caption(style="text-align:center;")
+        textarea(style="width: 95%;", placeholder="Lorem ipsum lalala...", ng-model="screen.name")

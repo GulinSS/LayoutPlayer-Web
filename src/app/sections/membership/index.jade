@@ -1,0 +1,8 @@
+extend ../../templates-static/_master-dynamic
+
+block navigation
+  mixin navigation("/sections/login/")
+
+append scripts
+  script(src='/js/membership.templates.js')
+  script(src='/js/membership.js')

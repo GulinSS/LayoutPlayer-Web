@@ -1,0 +1,25 @@
+.modal("ng-controller"="authentication", "fade-in")
+    .modal-header
+        h3 Аутентификация
+    .modal-body
+        form.form-horizontal
+            .control-group
+                label.control-label Логин
+                .controls
+                    input(type='text', ng-model='login')
+            .control-group
+                label.control-label Пароль
+                .controls
+                    input(ng-disabled='login | isEmpty', type='password', ng-model='password')
+                .controls
+                    a(href='#', ng-click='mailPassword()')
+                        | <i class='icon-envelope'></i>
+                        | Напомнить
+            .control-group
+                .controls
+                    label.checkbox Запомнить вход
+                        input(type='checkbox', ng-model='remember')
+    .modal-footer
+        button.btn.btn-primary(ng-disabled='isNotPermitForLogon()', type='submit', ng-click='authenticate()')
+            | <i class='icon-lock'></i>
+            | Войти в систему

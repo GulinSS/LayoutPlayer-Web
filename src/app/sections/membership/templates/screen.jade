@@ -1,0 +1,13 @@
+#layout(data-layout)
+  #img_layout
+    #img_wrap
+      img(src='{{ img }}')
+      #links
+        a.mark(ng-repeat='link in links', href='{{ "#/"+projectId+"/"+link.targetId }}',
+          style="top: {{ link.point.y }}px; left: {{ link.point.x }}px; width: {{ link.width }}px; height: {{ link.height }}px;")
+
+#screenSelector(style="visibility: hidden;")
+  p Выберите эскиз для связывания:
+  div
+    select(screen-link-selector)
+      option(value="1") Это один из экранов, который принадлежит проекту ЭЖ.

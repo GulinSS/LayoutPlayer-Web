@@ -1,0 +1,22 @@
+mixin _link(path, text)
+  a(href='#{path}')= text
+
+mixin _sectionLink(path, text, isActive)
+  - if (isActive)
+    li.active
+      mixin _link(path, text)
+  - else
+    li
+      mixin _link(path, text)
+
+mixin _sectionLinkCheck(path, text, activePath)
+  - if (path === activePath)
+    mixin _sectionLink(path, text, true)
+  - else
+    mixin _sectionLink(path, text, false)
+
+mixin navigation(activePath)
+  ul.nav
+    mixin _sectionLinkCheck("/", "Главная", activePath)
+    mixin _sectionLinkCheck("/prices.html", "Тарифы", activePath)
+    mixin _sectionLinkCheck("/sections/login/", "Войти", activePath)

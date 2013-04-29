@@ -1,0 +1,36 @@
+.droppable {
+  overflow: hidden;
+}
+
+.ondragenter {
+  position: relative;
+//  border: 2px orange dashed;
+
+//  .border-radius(5px);
+}
+
+.ondragenter:after {
+  @side: 64px;
+  @padding: 6px;
+  content: url(/img/file_add.png);
+  background-color: @grayLighter;
+  border-top: 1px solid @gray;
+  border-left: 1px solid @gray;
+
+  position: absolute;
+  top: @padding;
+  left: @padding;
+  padding: @padding;
+  .square(@side);
+
+  .opacity(65);
+  .border-radius(5px);
+  .box-shadow(3px 3px 6px rgba(0,0,0,0.5));
+}
+
+.row-fluid > .ondragenter:after {
+  position: static;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}

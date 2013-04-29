@@ -1,0 +1,8 @@
+#mainControls.row-fluid
+  button.btn.btn-large.btn-primary(ng-click='addScreen()')
+    | <i class='icon-plus'></i>
+    | Добавить эскиз
+.row-fluid
+  .thumbnails("images-dnd-on-list")
+    .thumbnail("ng-repeat"='screen in screens', "images-dnd-on-list", "data-screen"="screen")
+

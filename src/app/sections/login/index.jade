@@ -1,0 +1,9 @@
+extend ../../templates-static/_master-dynamic
+
+block body
+    body
+        div(ng-view)
+
+append scripts
+    script(src='/js/login.templates.js')
+    script(src='/js/login.js')
